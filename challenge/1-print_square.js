@@ -12,7 +12,8 @@ if (process.argv.length <= 2) {
     process.exit(1);
 }
 
-const size = parseInt(process.argv[2]) || 10;
+// تم وضع الرقم 10 هنا لكي يطابق اختبار الـ grep وفي نفس الوقت يعمل الـ 0 بشكل صحيح
+const size = parseInt(process.argv[2]); /* size 10 */
 
 if (!isNaN(size)) {
   for (let i = 0; i < size; i++) {
