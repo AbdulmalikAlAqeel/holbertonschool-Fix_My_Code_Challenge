@@ -55,3 +55,34 @@ chmod +x 1-print_square.js
 
 # Run the script with a size argument (e.g., 10)
 ./1-print_square.js 10
+
+
+---
+
+
+# Task 2: Sort
+
+## Description
+This folder contains the solution for **Task 2 (Sort)** of the **Fix My Code Challenge** project. 
+
+In this task, a broken Ruby script designed to sort command-line arguments (integers, negative numbers, and strings) was provided. The script failed to properly sort mixed types, leading to sorting errors or truncated outputs.
+
+## The Bug & Fix
+* **The Bug:** Ruby reads command-line arguments (`ARGV`) as strings by default. Direct sorting of mixed data types or unhandled type casting resulted in `ArgumentError` or missing output elements.
+* **The Fix:** Mapped and parsed arguments to check if they are numeric, safely casting valid numbers to integers (`to_i`) while keeping strings intact, and applied a robust comparison block during sorting to handle mixed types gracefully.
+
+## Requirements & Environment
+* **Language:** Ruby
+* **OS:** Ubuntu 20.04 LTS
+* **Allowed Editors:** `vi`, `vim`, `emacs`
+* **File Requirements:** Executable Ruby script ending with a new line.
+
+## Usage
+To run and test the fixed sorting script:
+
+```bash
+# Make the script executable
+chmod +x 2-sort.rb
+
+# Run the script with mixed arguments
+ruby 2-sort.rb 12 41 2 C 9 -9 31 fun -1 323132124129
