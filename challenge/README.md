@@ -119,3 +119,34 @@ chmod +x 3-user.py
 
 # Run the script
 ./3-user.py
+
+
+---
+
+
+# Task 4: Double linked list
+
+## Description
+This folder contains the solution for **Task 4 (Double linked list)** of the **Fix My Code Challenge** project. 
+
+In this task, a broken C implementation for deleting a node at a specific index in a doubly linked list (`delete_dnodeint_at_index.c`) was provided. The original implementation suffered from incorrect pointer manipulation and use-after-free issues, which corrupted the list structure during node deletion.
+
+## The Bug & Fix
+* **The Bug:** 
+  1. Incorrect pointer rewiring inside the node deletion block (e.g., mismanaging `prev` and `next` pointers of adjacent nodes).
+  2. Attempting to access node members *after* calling `free(*head)` (use-after-free violation).
+  3. Improper resetting of the list pointer (`*head`) after traversal.
+* **The Fix:** Rewrote the pointer adjustment logic to correctly bridge the previous and next nodes *before* freeing the target node, ensuring complete structural integrity of the doubly linked list across all indices.
+
+## Requirements & Environment
+* **Language:** C (GNU89 standard)
+* **OS:** Ubuntu 20.04 LTS
+* **Compiler Flags:** `-Wall -pedantic -Werror -Wextra -std=gnu89`
+* **Allowed Editors:** `vi`, `vim`, `emacs`
+
+## Usage
+To compile and test the implementation:
+
+```bash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 main.c free_dlistint.c print_dlistint.c add_dnodeint_end.c delete_dnodeint_at_index.c -o delete_dnodeint
+./delete_dnodeint
