@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-# Convert all inputs to integers and sort them numerically
-result = ARGV.map { |arg| arg.to_i }.sort
+# Select only valid integers, convert them to integers, and sort them numerically
+result = ARGV.select { |arg| arg =~ /^-?\d+$/ }.map(&:to_i).sort
 
 puts result
