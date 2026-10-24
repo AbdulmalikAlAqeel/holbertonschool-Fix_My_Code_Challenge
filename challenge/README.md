@@ -24,3 +24,34 @@ chmod +x 0-fizzbuzz.py
 
 # Run the script with a number (e.g., 50)
 ./0-fizzbuzz.py 50
+
+
+---
+
+
+# Task 1: Print Square
+
+## Description
+This folder contains the solution for **Task 1 (Print square)** of the **Fix My Code Challenge** project. 
+
+In this task, a broken JavaScript script designed to print a square of a given size using the character `#` was provided. The script suffered from formatting issues, printing characters continuously in a single long line instead of forming a proper grid (rows and columns).
+
+## The Bug & Fix
+* **The Bug:** The script failed to handle newlines correctly between rows, causing all hashes (`#`) to concatenate into a single horizontal string instead of a $N \times N$ square matrix.
+* **The Fix:** Implemented nested loops (outer loop for rows and inner loop for columns) with proper newline separation after completing each row.
+
+## Requirements & Environment
+* **Language:** JavaScript (Node.js)
+* **OS:** Ubuntu 20.04 LTS
+* **Allowed Editors:** `vi`, `vim`, `emacs`
+* **File Requirements:** Executable Node.js script ending with a new line.
+
+## Usage
+To run and test the fixed square printing script:
+
+```bash
+# Make the script executable
+chmod +x 1-print_square.js
+
+# Run the script with a size argument (e.g., 10)
+./1-print_square.js 10
