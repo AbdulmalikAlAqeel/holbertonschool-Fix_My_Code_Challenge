@@ -86,3 +86,36 @@ chmod +x 2-sort.rb
 
 # Run the script with mixed arguments
 ruby 2-sort.rb 12 41 2 C 9 -9 31 fun -1 323132124129
+
+
+---
+
+
+# Task 3: User password
+
+## Description
+This folder contains the solution for **Task 3 (User password)** of the **Fix My Code Challenge** project. 
+
+In this task, a broken Python `User` class was provided. The class manages user identification (`id`) via UUID and password handling using MD5 hashing, getters, setters, and a validation method (`is_valid_password`). However, password updates and validation checks failed due to variable mismatch and MD5 digest casing inconsistencies.
+
+## The Bug & Fix
+* **The Bug:** 
+  1. Inside the password setter, the hashed password was incorrectly assigned to `self._password` (single underscore) instead of the private attribute `self.__password` (double underscore).
+  2. An inconsistency between `.lower()` in the setter and `.upper()` in the validation method caused hash comparisons to fail.
+* **The Fix:** Corrected the private attribute assignment to `self.__password` and unified MD5 hexadecimal formatting to lowercase (`.lower()`) across both the setter and validation logic.
+
+## Requirements & Environment
+* **Language:** Python 3 (`python3`)
+* **OS:** Ubuntu 20.04 LTS
+* **Allowed Editors:** `vi`, `vim`, `emacs`
+* **File Requirements:** Executable Python script ending with a new line, conforming to PEP 8 style guidelines.
+
+## Usage
+To run and test the fixed user password script:
+
+```bash
+# Make the script executable
+chmod +x 3-user.py
+
+# Run the script
+./3-user.py
